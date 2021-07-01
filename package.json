@@ -1,0 +1,23 @@
+{
+  "name": "solo_projectapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirillnemkov/solo_projectAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirillnemkov/solo_projectAPI/issues"
+  },
+  "homepage": "https://github.com/kirillnemkov/solo_projectAPI#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
