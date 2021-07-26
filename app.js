@@ -6,8 +6,7 @@ const fetch = require("node-fetch");
 
 bot.setMyCommands([
   { command: "/start", description: "Приветствие" },
-  { command: "/sovet", description: "Получить совет" },
-  { command: "/kiska", description: "Показать киску" },
+  { command: "/advice", description: "Получить совет" },
 ]);
 
 bot.on("message", async (msg) => {
@@ -16,20 +15,9 @@ bot.on("message", async (msg) => {
   const userName = msg.from.first_name;
 
   if (text === "/start") {
-    bot.sendMessage(chatId, `Привет ${userName}, познакомимся?`);
+    bot.sendMessage(chatId, `Привет ${userName}, введи /advice`);
   }
-  if (text === "/kiska") {
-    const response = await fetch("https://api.thecatapi.com/v1/images/search", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const parsedResponse = await response.json();
-    const url = parsedResponse[0].url;
-    bot.sendMessage(chatId, url);
-  }
-  if (text === "/sovet") {
+  if (text === "/advice") {
     const response = await fetch("https://api.adviceslip.com/advice", {
       method: "GET",
       headers: {
@@ -60,6 +48,6 @@ bot.on("message", async (msg) => {
     );
     const parseResponse = await res.json();
     const answer = parseResponse.data.translations[0].translatedText;
-    bot.sendMessage(chatId, `Лови советик ====> ${answer}`);
+    bot.sendMessage(chatId, `Лови советик ===> ${answer}`);
   }
 });
